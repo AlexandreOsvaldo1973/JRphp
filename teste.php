@@ -8,10 +8,11 @@ echo "<h2>Resultado PHP <br></h2>";
 
 $nome = "Monalisa";
 $sobrenome = " Catrina";
-$nomeCompleto = $nome . $sobrenome;
+$nomeCompleto = $nome . ' ' . $sobrenome;
 $localNascimento = "SBS";
 $sexo = "F";
 $idade = 20;
+$peso = 13.56;
 $vacina = false;
 $senha = 1234;
 
@@ -27,6 +28,13 @@ echo "Idade: ".$idade."<br>";
 echo " Tipo: ".gettype($idade)."<br>";
 echo "Vacinada: ".$vacina."<br>";
 echo " Tipo: ".gettype($vacina)."<br>";
+echo "<hr>";
+var_dump($nome);
+echo '<br>';
+var_dump($peso);
+echo '<br>';
+var_dump($vacina);
+echo "<hr>";
 
 // Operadores Matemáticos
 
@@ -45,6 +53,54 @@ define('MAX', 50);
 
 echo "Mínimo: " . MIN . "<br>";
 echo "Máximo: ". MAX . "<br>";
+echo "<hr>";
+
+// Arrays
+
+$nomes = array("Monalisa", "Sophia", "Lupita");
+$sobrenomes = ["Catrina", "Terriviê", "Prita"];
+$names = [
+    10 => "Lalá",
+    20 => "Lelé",
+    30 => "Lilí"
+];
+
+$nomes[] = "Tchozão";
+
+array_push($nomes, "Belinha");
+array_push($nomes, "Kika", "Dininha", "Bodeco");
+
+echo $nomes[0].' '.$sobrenomes[0].' '.$names[20]."<br>";
+echo "Quando o valor não existe: ".$names[40]."<br>";
+var_dump($nomes); //apresenta o array em linha
+echo '<pre>';
+print_r($nomes); // apresenta organizado em array
+echo '</pre>';
+
+unset($nomes[3]); //removeu elementos do array
+echo '<pre>';
+print_r($nomes);
+echo '</pre>';
+
+$empresa = [
+    'CEO' => "Alexandre",
+    'Administrador' => "Lucas",
+    'Contabilidade' => "Luciana",
+    'Relações Públicas' => "Anne",
+    'Executivo' => "Francisco"
+];
+
+echo "Vamos demitir: ".$empresa['Administrador'].'<br>';
+echo "Vamos promover a Diretor de Contratos Internacionais: ".$empresa['Executivo'];
+
+$empresa['Operário Digital'] = "Alexandre Filho";
+
+echo '<pre>';
+print_r($empresa);
+echo '</pre>';
+
+
+echo "<hr>";
 
 if($idade >= MIN && $idade <= MAX){
     echo "Acesso Liberado <br>";
@@ -52,11 +108,15 @@ if($idade >= MIN && $idade <= MAX){
     echo "Acesso Bloqueado <br>";
 }
 
+echo "<hr>";
+
 if($vacina == true ){
     echo "Já é Vacinada! <br>";
 }else{
     echo "Têm que vacinar! <br>";
 }
+
+echo "<hr>";
 
 if($senha == 123){
     echo "*Acesso autorizado nível 1* <br>";
@@ -83,6 +143,7 @@ if($senha == 123){
     <p>Local Nascimento: <?=$localNascimento?></p>
     <p>Idade: <?=$idade?></p>
     <p>Sexo: <?=$sexo?></p>
+    <p>Peso: <?=$peso?>Kg</p>
     <p>Vacinada: <?$vacina?></p>
     <p>Soma: <?=$soma?></p>
     <p>Subtração: <?=$subtrai?></p>
