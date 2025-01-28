@@ -99,6 +99,48 @@ echo '<pre>';
 print_r($empresa);
 echo '</pre>';
 
+$lojas = [
+    'santos' => [
+        'telefone' => '555-1234',
+        'e-mail' => 'santos@enupla.com',
+    ],
+    'itajai' => [
+        'telefone' => '555-4567',
+        'e-mail' => 'itajai@enupla.com',
+    ]
+];
+
+echo '<pre>';
+print_r($lojas);
+echo '</pre>';
+
+echo $lojas['santos']['e-mail'];
+
+$notas = [
+    [10, 20, 30],
+    [100, 200, 300],
+    [1000, 2000, 3000]
+];
+
+echo '<pre>';
+echo print_r($notas);
+echo '</pre>';
+
+echo $notas[2][1];
+
+echo '<br>';
+
+$resultado = is_array($nomes);
+$resultado = count($nomes);
+
+echo array_push($nomes, 'Tobó');
+echo array_unshift($nomes, "Catita");
+echo $resultado = array_pop($nomes);
+echo $resultado = array_shift($nomes);
+unset($nomes[0]);
+
+echo $resultado;
+
 
 echo "<hr>";
 
